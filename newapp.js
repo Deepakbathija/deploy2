@@ -163,7 +163,9 @@ app.get("/list",function(req,res){
 				console.log("count is " + co);
 				count12=co;
 				console.log("count glogal is "+count12);
-				res.render("properties/property-list",{prop:prop,co:co,cp:currentPage});
+				totalPages=parseInt(co/5);
+				console.log("dfsggs"+totalPages);
+				res.render("properties/property-list",{prop:prop,co:co,cp:currentPage,tp:totalPages});
 			});
 		}
 	}).limit(5);
