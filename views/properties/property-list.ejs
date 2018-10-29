@@ -163,18 +163,19 @@
 		<div class="col-md-5"></div>
 		<div class="col-md-3">
 			<ul class="pagination">
+				<% currentNow=cp %>
 				<% if(cp>1){ %>
 				<li><a href="/list/<%= --cp %>"><</a></li>
 				<%cp++} %>
 				<% for(var i=0;i<=2;i++){ %>
-					<% if(cp>4){ %>
+					<% if(cp>tp){ %>
 						<% break;%>
 					<% }else{%>
   					<li><a href="/list/<%= cp %>"><%= cp %></a></li>
   				<% } %>
   			<% cp++; %>
   			<% } %>
-  			<li><a href="/list/<%= cp++ %>">></a></li>
+  			<li><a href="/list/<%= ++currentNow %>">></a></li>
 			</ul>
 		</div>
 		<div class="col-md-4"></div>
